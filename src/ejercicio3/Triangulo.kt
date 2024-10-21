@@ -34,16 +34,14 @@ class Triangulo (var lado1: Int,var lado2: Int,var lado3: Int) {
         lado3=l3
     }
     fun imprimirLadoMayor(){
-        if(lado1>lado2 && lado1>lado3){
-            println("El lado mayor es el lado 1 que mide: $lado1")
-        }else if(lado2>lado3 && lado2>lado1){
-            println("El lado mayor es el lado 2 que mide: $lado2")
-        }else if(lado3>lado1 && lado3>lado2){
-            println("El lado mayor es el lado 3 que mide: $lado3")
-        }else{
-            println("No hay un lado mayor que los otros 2")
+        when{
+            lado1>lado2 && lado1>lado3 -> println("EL lado1 es el lado mayor")
+            lado2>lado3 -> println("EL lado2 es el lado mayor")
+            lado3>lado2 -> println("EL lado3 es el lado mayor")
+            else -> println("No hay un lado mayor que los otros 2")
         }
     }
+
     fun esEquilatero(l1: Int, l2: Int, l3: Int): String{
         return if (l1 == l2 && l2 == l3){
             "EL triángulo es equilátero"
